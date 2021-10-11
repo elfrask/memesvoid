@@ -33,7 +33,7 @@ let website = template("public/template.html");
 
 })();
 
-let lista = ["js", "css", "sass", "docs", "img", "music", "data", "jsx", "app"]
+let lista = ["js", "css", "sass", "docs", "img", "music", "data", "jsx", "app", "font"]
 lista.forEach(x=>{
     if (!fs.existsSync(x)) {
         fs.mkdirSync(x)

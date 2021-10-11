@@ -2,11 +2,18 @@
 
 class App extends React.Component {
     render() {
+        
 
         return (
-            <div>
-                Saludos! Hola mundo!!        
-            </div>
+            <Cuerpo>
+                <div style={{
+                    fontFamily:"src",
+                    fontSize:"30px",
+                    color:"crimson"
+                }}>
+                    Ricardito el nene bonito 7v7r {"<3"}
+                </div>
+            </Cuerpo>
         )
     }
 };
