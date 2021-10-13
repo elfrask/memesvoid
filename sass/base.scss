@@ -67,10 +67,59 @@
     
 }
 
+.grid {
+    display: grid;
+}
 
+.des-box {
+    display: inline-block;
+    max-width: 606px;
+    width: 100%;
+    height: max-content;
+}
+
+
+.des-a {
+    display: flex;
+    float: left;
+    justify-content: center;
+    align-items: flex-end;
+    width: 200px;
+    height: 150px;
+    border: solid #333 1px;
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: white;
+}
+
+.des-a:hover {
+    transform: scale(1.1);
+}
+
+.des-b {
+    width: 402px;
+    height: 302px;
+}
+
+.des-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    font-size: 25px;
+    width: 100%;
+    height: 50px;
+}
 
 @media (orientation:portrait) {
     .land {display: none;}
+
+    .des-a, .des-b {
+        width: 100%;
+        height: 150px;
+    }
     
 }
 @media (orientation:landscape) {

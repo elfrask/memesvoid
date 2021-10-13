@@ -2,6 +2,15 @@
 let go = (id) => document.getElementById(id);
 let asi = (v1,v2) => Object.assign(v1||{}, v2||{});
 let genlink = (l) => (() =>{if (typeof(l)!=="function") {if (l!=="") document.location.assign(l)} else {l()}});
+function pub(title, img, link, seo) {
+    return {
+        title:title,
+        img:img,
+        link:link,
+        seo:seo,
+    }
+}
+
 
 class Img extends React.Component {
     render() {
@@ -13,7 +22,7 @@ class Img extends React.Component {
                 borderRadius:this.props.radius||"0px",
                 boxShadow:`0px 0px 10px ${this.props.shadow||"transparent"}`,
             }, this.props.style||{})}>
-                
+                {this.props.children}
             </div>
         )
     }
@@ -92,9 +101,15 @@ class Pie extends React.Component {
         return (
             <div className="pie" style={{
                 color:"#ccc"
-            }}>
-                Web creada y diseñada por Frask Dreemurr
+            }} alt="Frask - webdev - blog - fullstack">
+                <a href="https://frask.repl.co" style={{
+                    color:"#ccc"
+                }}>
+                    Web creada y diseñada por Frask Dreemurr
+                </a>
             </div>
         )
     }
 };
+
+
