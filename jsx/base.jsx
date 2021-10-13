@@ -9,6 +9,22 @@ function pub(title, img, link, seo) {
         link:link,
         seo:seo,
     }
+};
+
+function entrada(e, a) {
+    return(
+        <Img 
+        className={"des-a " +((a||false)?" des-b":"")}
+        src={e.img}
+        link={e.link}
+        size="-1px"
+        
+        >
+            <div className="des-title" alt={e.seo||e.title||"imagen"}>
+                {e.title}
+            </div>
+        </Img>
+    )
 }
 
 
@@ -20,8 +36,8 @@ class Img extends React.Component {
                 height:this.props.size||"50px",
                 backgroundImage:`url("${this.props.src||this.props.img}")`,
                 borderRadius:this.props.radius||"0px",
-                boxShadow:`0px 0px 10px ${this.props.shadow||"transparent"}`,
-            }, this.props.style||{})}>
+                boxShadow:`0px 0px 10px ${this.props.shadow||"sdjado"}`,
+            }, this.props.style||{})} onClick={genlink(this.props.link||"")}>
                 {this.props.children}
             </div>
         )

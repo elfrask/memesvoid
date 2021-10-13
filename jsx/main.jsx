@@ -3,6 +3,7 @@
 class App extends React.Component {
     render() {
         
+        let sep = "15px"
 
         return (
             <Cuerpo>
@@ -10,8 +11,30 @@ class App extends React.Component {
                     fontFamily:"src",
                     fontSize:"30px",
                     color:"crimson"
-                }} className="medio">
-                    <div className="des-box" id="deci">
+                }} className="">
+                    <div style={{
+                        width:"100%",
+                        maxWidth:"",
+                        height:"max-content",
+                        backgroundColor:">#333",
+                    
+                        paddingBottom:sep,
+                    }} className="medio">
+                        <div className="des-box medio">
+                            <center id="deci">
+
+                            </center>
+                        </div>
+                    </div>
+
+                    <div style={{
+                        marginTop:"30px",
+                        width:"100%",
+                        height:"max-content",
+                        backgroundColor:"#333",
+                        paddingTop:sep,
+                        paddingBottom:sep,
+                    }}>
                         
                     </div>
                 </div>
@@ -21,13 +44,14 @@ class App extends React.Component {
 };
 
 let destacados = [
-    pub("saludos Terricolas", "imagen", "/", "imagen coño"),
-    pub("saludos Terricolas", "imagen", "/", "imagen coño"),
-    pub("saludos Terricolas", "imagen", "/", "imagen coño"),
-    pub("saludos Terricolas", "imagen", "/", "imagen coño"),
-    pub("saludos Terricolas", "imagen", "/", "imagen coño"),
-    pub("saludos Terricolas", "imagen", "/", "imagen coño"),
+    pub("saludos Terricolas", "/img/page/bg.jpg", "/", "imagen coño"),
+    pub("saludos Terricolas", "/img/page/bg.jpg", "/", "imagen coño"),
+    pub("saludos Terricolas", "/img/page/bg.jpg", "/", "imagen coño"),
+    pub("saludos Terricolas", "/img/page/bg.jpg", "/", "imagen coño"),
+    pub("saludos Terricolas", "/img/page/bg.jpg", "/", "imagen coño"),
+    pub("saludos Terricolas", "/img/page/bg.jpg", "/", "imagen coño"),
 ];
+
 
 ReactDOM.render(
     <App></App>,
@@ -39,16 +63,7 @@ ReactDOM.render(
             destacados.map((e, i) => {
 
                 return(
-                    <Img 
-                    className={"des-a " +(i==0?" des-b":"")}
-                    src={e.img}
-                    link={e.link}
-                    size="-1px"
-                    >
-                        <div className="des-title" alt={e.seo||e.title||"imagen"}>
-                            {e.title}
-                        </div>
-                    </Img>
+                    entrada(e, (i%6)==0)
                 )
             }),
             go("deci"),
